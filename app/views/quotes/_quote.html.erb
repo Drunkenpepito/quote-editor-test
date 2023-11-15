@@ -1,0 +1,22 @@
+<%= turbo_frame_tag quote do %>
+  <span class="flex bg-transparent text-blue-700 font-semibold hover:text-white py-4 px-4 border border-blue-500 hover:border-transparent hover:bg-blue-200 hover: delay-200 rounded m-2 ">
+    
+    <%= link_to "#{quote.name}",
+        quote_path(quote),
+        data: { turbo_frame: "_top" },
+        class:" truncate text-blue-400 no-underline px-3 w-96 ; " %>
+  
+    <div class="quote__actions grow flex justify-end">
+      <%= button_to "Delete",
+          quote_path(quote),
+          method: :delete,
+          form: { data: { turbo_frame: "_top" } },
+          class: " bg-transparent text-white no-underline font-semibold bg-blue-400 hover:bg-transparent hover:text-blue-700 rounded p-2 mx-2 " %>
+
+      <%= link_to "Edit" ,
+          edit_quote_path(quote),
+          class: " bg-transparent text-white no-underline font-semibold bg-blue-400 hover:bg-transparent hover:text-blue-700 rounded p-2 mx-2 " %>
+    </div>
+
+  </span>
+<% end %>

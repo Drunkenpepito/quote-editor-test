@@ -1,0 +1,19 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @quote %>
+
+  <%= link_to "Back to quotes",
+      quotes_path,
+      class: " text-white no-underline font-semibold bg-blue-400 hover:bg-transparent hover:text-blue-700 rounded p-2 mx-2 "
+  %>
+<!--
+<div>
+  <%= link_to "Edit",
+      edit_quote_path(@quote),
+      class: " text-white no-underline font-semibold bg-blue-400 hover:bg-transparent hover:text-blue-700 rounded p-2 mx-2 "
+  %>
+  |
+
+   <%= button_to "Destroy this quote", @quote, method: :delete %> 
+</div>
+  -->

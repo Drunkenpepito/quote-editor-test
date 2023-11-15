@@ -1,0 +1,21 @@
+<p style="color: green"><%= notice %></p>
+
+<%= turbo_frame_tag "F1" do %>
+  <h1 class ="flex text-blue-400 justify-center">Quotes</h1>
+  <%= link_to "New quote",
+      new_quote_path,
+      data: { turbo_frame: dom_id(Quote.new) },
+      class: "flex items-center justify-center no-underline text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2  " %>
+<% end %>
+
+<%= turbo_frame_tag Quote.new %>
+
+<%= turbo_frame_tag "quotes" do %>
+  <div id="quotes">
+    <%= render @quotes %>
+  </div>
+<% end %>
+
+
+
+
